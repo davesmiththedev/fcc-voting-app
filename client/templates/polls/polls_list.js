@@ -1,14 +1,14 @@
 var pollsData = [
     {
-        title: 'Cats or Dogs',
+        title: 'Cats or Dogs?',
         author: 'Dave'
     },
     {
-        title: 'Favorite Burger',
+        title: 'Favorite Burger?',
         author: 'Dave'
     },
     {
-        title: 'Android or iOS',
+        title: 'Android or iOS?',
         author: 'Dave'
     }
 ];
