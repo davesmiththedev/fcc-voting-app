@@ -11,12 +11,12 @@
         </div>
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="nav navbar-nav">
-                <!--{{#if currentUser}}-->
+                {{#if currentUser}}
                     <li><a href="{{pathFor 'newPoll'}}">Create Poll</a></li>
-                <!--{{/if}}-->
+                {{/if}}
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <!--{{> loginButtons}}-->
+                {{> loginButtons}}
             </ul>
         </div>
     </header>
