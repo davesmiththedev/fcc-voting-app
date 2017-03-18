@@ -1,5 +1,6 @@
 Template.pollNew.events({
     'submit form': function(e){
+        e.preventDefault();
 
         var poll = {
             title: $(e.target).find('[name=title]').val()
