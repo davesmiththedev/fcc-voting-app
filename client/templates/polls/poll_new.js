@@ -4,8 +4,8 @@ $(function()
     {
         e.preventDefault();
 
-        var controlForm = $('.container form:first'),
-            optionGroup = $('.option-group'),
+        var controlForm = $('form'),
+            optionGroup = $('#options'),
             currentEntry = $(this).parents('.entry:first'),
             newEntry = $(currentEntry.clone()).appendTo(optionGroup);
 
