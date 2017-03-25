@@ -1,0 +1,16 @@
+<template name='pollSummary'>
+    <div class="poll">
+        <div class="poll-content">
+            <h3>{{title}}</h3>
+            <p>Created by {{author}}</p>
+        </div>
+        <br><br><br>
+        <div class="poll-content">
+            <ul class="options">
+                {{#each options}}
+                    <li>{{name}} : {{votes}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</template>
