@@ -145,4 +145,13 @@
  clear: both;
  margin-bottom: 5px;
  pointer-events: auto;
+}
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
+.glyphicon
+{
+    font-size: 12px;
 } 

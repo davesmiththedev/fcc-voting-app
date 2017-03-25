@@ -1,13 +1,39 @@
+$(function()
+{
+    $(document).on('click', '.btn-add', function(e)
+    {
+        e.preventDefault();
+
+        var controlForm = $('.container form:first'),
+            optionGroup = $('.option-group'),
+            currentEntry = $(this).parents('.entry:first'),
+            newEntry = $(currentEntry.clone()).appendTo(optionGroup);
+
+        newEntry.find('input').val('');
+        controlForm.find('.entry:not(:last) .btn-add')
+            .removeClass('btn-add').addClass('btn-remove')
+            .removeClass('btn-success').addClass('btn-danger')
+            .html('<span class="glyphicon glyphicon-minus"></span>');
+    }).on('click', '.btn-remove', function(e)
+    {
+		$(this).parents('.entry:first').remove();
+
+		e.preventDefault();
+		return false;
+	});
+});
+
+
 Template.pollNew.events({
     'submit form': function(e){
         e.preventDefault();
 
         var user = Meteor.user();
         
-        var optionsFromForm = document.getElementsByClassName("options");
+        var pollOptions = document.getElementsByClassName("options");
         var optionsList = [];
 
-        [].forEach.call(optionsFromForm, (optionItem)=>{
+        [].forEach.call(pollOptions, (optionItem)=>{
             optionsList.push({
                 name: optionItem.value, 
                 votes: 0,
@@ -32,3 +58,4 @@ Template.pollNew.events({
         Router.go('pollsList')
     }
 });
+
