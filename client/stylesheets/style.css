@@ -1,5 +1,5 @@
 /*Credit to Discover Meteor by Tom Coleman & Sacha Grief*/
-.grid-block, .main, .poll, .comments li, .comment-form {
+.grid-block, .main, .poll, li, .comments li, .comment-form {
  background: #fff;
  border-radius: 3px;
  padding: 10px;
@@ -17,6 +17,9 @@
  position: absolute;
  top: 0px;
  width: 100%;
+}
+ul{
+    list-style: none
 }
 .navbar {
  margin-bottom: 10px; }
@@ -146,12 +149,14 @@
  margin-bottom: 5px;
  pointer-events: auto;
 }
-.entry:not(:first-of-type)
-{
+.entry:not(:first-of-type){
     margin-top: 10px;
 }
 
-.glyphicon
-{
+.glyphicon{
     font-size: 12px;
+}
+.title{
+    font-size: 25px;
+    font-weight: bold;
 } 
