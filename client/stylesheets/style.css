@@ -1,5 +1,5 @@
 /*Credit to Discover Meteor by Tom Coleman & Sacha Grief*/
-.grid-block, .main, .poll, li, .comments li, .comment-form {
+.grid-block, .main, .poll, .comments li, .option, .comment-form {
  background: #fff;
  border-radius: 3px;
  padding: 10px;
@@ -168,3 +168,6 @@ ul{
     /*padding-top: 15px;*/
     /*padding-bottom: 15px;*/
 } 
+.btn-vote{
+    align-content: right;
+}

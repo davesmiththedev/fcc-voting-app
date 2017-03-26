@@ -8,10 +8,20 @@
         <div class="poll-content">
             <ul class="options">
                 {{#each options}}
-                    <li>{{name}} : {{votes}}</li>
+                    <div class="row option">
+                        <li>
+                            <div class="col-xs-8">
+                                {{name}} : {{votes}}
+                            </div>
+                            <div class="col-xs-4">
+                                <button type="button" class="btn btn-primary btn-vote">
+                                    Vote
+                                </button>
+                            </div>
+                        </li>
+                    </div>
                 {{/each}}
             </ul>
-            <input type="button" class="btn btn-primary btn-vote" value="Vote">
         </div>
     </div>
 </template>
