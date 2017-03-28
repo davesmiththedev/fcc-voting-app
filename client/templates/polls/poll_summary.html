@@ -11,10 +11,10 @@
                     <div class="row option">
                         <li>
                             <div class="col-xs-8">
-                                {{name}} : {{votes}}
+                                <span id='option{{@index}}'>{{name}}</span> : <span id="votes">{{votes}}</span>
                             </div>
                             <div class="col-xs-4">
-                                <button type="button" class="btn btn-primary btn-vote">
+                                <button id='btn{{@index}}' type="button" class="btn btn-primary btn-vote">
                                     Vote
                                 </button>
                             </div>

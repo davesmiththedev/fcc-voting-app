@@ -4,9 +4,14 @@ $(function()
     {
         e.preventDefault();
 
+        var urlParts = location.href.split('/');
+        var id = urlParts.pop();
+
+        var optionNumber = this.id.substr(this.id.length -1);
+
         var ballot = {
-            _id: "XRqXNfW4HMssECGqA",
-            option: "Windows"
+            _id: id,
+            option: $('#option' + optionNumber).html()
         }
 
         Meteor.call('voteAdd', ballot, function(error, result){
