@@ -18,6 +18,7 @@ $(function()
             if(error){
                 return alert(error.reason);
             };
+            $('.btn-vote').attr('disabled', true);
         });
     });
 });
