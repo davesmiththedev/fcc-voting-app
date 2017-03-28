@@ -21,4 +21,19 @@ $(function()
             $('.btn-vote').attr('disabled', true);
         });
     });
+
+    $(document).on('click', '.btn-delete', function(e)
+    {
+        e.preventDefault();
+
+        var urlParts = location.href.split('/');
+        var id = urlParts.pop();
+
+        Meteor.call('pollDelete', id, function(error, result){
+            if(error){
+                return alert(error.reason);
+            };
+            Router.go('pollsList');
+        });
+    });
 });
