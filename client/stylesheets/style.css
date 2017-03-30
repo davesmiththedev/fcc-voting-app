@@ -171,6 +171,6 @@ ul{
 .btn-vote{
     align-content: right;
 }
-.btn-delete{
-    float: right;
-}
+/*.edit-options{
+    align-content: stretch;
+}*/

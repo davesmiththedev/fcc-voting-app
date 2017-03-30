@@ -1,12 +1,23 @@
 <template name='pollSummary'>
     <div class="poll">
-        <div class="poll-content">
-            <h3>{{title}}</h3>
-            <p>Created by {{author}}</p>
+        <div class="row">
+            <div class="col-xs-10 poll-content">
+                <h3>{{title}}</h3>
+                <p>Created by {{author}}</p>
+            </div>
+            {{#if ownPoll}}
+                <div class="col-xs-2">
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-info btn-sm btn-edit">
+                            edit
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm btn-delete">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </div>
+                </div>
+            {{/if}}
         </div>
-        <button type="button" class="btn btn-danger btn-sm btn-delete">
-            <span class="glyphicon glyphicon-trash"></span>
-        </button>
         <br><br><br>
         <div class="poll-content">
             <ul class="options">
