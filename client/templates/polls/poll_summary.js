@@ -1,13 +1,12 @@
-$(function()
-{
-    $(document).on('click', '.btn-vote', function(e)
-    {
+Template.pollSummary.events({
+
+    'click .btn-vote': function(e){
         e.preventDefault();
 
         var urlParts = location.href.split('/');
         var id = urlParts.pop();
 
-        var optionNumber = this.id.substr(this.id.length -1);
+        var optionNumber = e.target.id.substr(e.target.id.length -1);
 
         var ballot = {
             _id: id,
@@ -20,10 +19,9 @@ $(function()
             };
             $('.btn-vote').attr('disabled', true);
         });
-    });
+    },
 
-    $(document).on('click', '.btn-delete', function(e)
-    {
+    'click .btn-delete': function(e){
         e.preventDefault();
 
         var urlParts = location.href.split('/');
@@ -35,5 +33,11 @@ $(function()
             };
             Router.go('pollsList');
         });
-    });
+    }
 });
+
+Template.pollSummary.helpers({
+    ownPoll: function(){
+        return this.userId === Meteor.userId();
+    }
+})
