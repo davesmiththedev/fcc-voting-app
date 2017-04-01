@@ -17,7 +17,7 @@ $(function()
 });
 
 
-Template.pollNew.events({
+Template.pollEdit.events({
     'click .btn-remove': function(e)
     {
 		$(this).parents('.entry:first').remove();
@@ -30,33 +30,34 @@ Template.pollNew.events({
         e.preventDefault();
 
         var user = Meteor.user();
+
+        console.log("Submit");
         
-        var pollOptions = document.getElementsByClassName("options");
-        var optionsList = [];
+        // var pollOptions = document.getElementsByClassName("options");
+        // var optionsList = [];
 
-        [].forEach.call(pollOptions, (optionItem)=>{
-            optionsList.push({
-                name: optionItem.value, 
-                votes: 0,
-                author: user.username,
-                created: new Date()
-            });
-        });
+        // [].forEach.call(pollOptions, (optionItem)=>{
+        //     optionsList.push({
+        //         name: optionItem.value, 
+        //         votes: 0,
+        //         author: user.username,
+        //         created: new Date()
+        //     });
+        // });
 
-        var poll = {
+        var pollUpdates = {
+            _id: this._id,
             title: $(e.target).find('[name=title]').val(),
-            options: optionsList,
-            author: user.username,
-            created: new Date()
+            // options: optionsList,
         };
 
-        Meteor.call('pollInsert', poll, function(error, result){
+        Meteor.call('pollEdit', pollUpdates, function(error, result){
             if(error){
                 return alert(error.reason);
             };
         });
 
-        Router.go('pollsList')
+        Router.go('pollDashboard', {_id: this._id})
     }
 });
 
