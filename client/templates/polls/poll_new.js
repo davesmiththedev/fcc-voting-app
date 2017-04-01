@@ -4,10 +4,11 @@ $(function()
     {
         e.preventDefault();
 
-        var controlForm = $('form'),
-            optionGroup = $('#options'),
+        var controlForm = $('#options'),
+            // optionGroup = $('#options'),
             currentEntry = $(this).parents('.entry:first'),
-            newEntry = $(currentEntry.clone()).appendTo(optionGroup);
+            newEntry = $(currentEntry.clone()).appendTo('controlForm');
+
 
         newEntry.find('input').val('');
         controlForm.find('.entry:not(:last) .btn-add')

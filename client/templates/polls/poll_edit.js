@@ -4,27 +4,28 @@ $(function()
     {
         e.preventDefault();
 
-        var controlForm = $('form'),
-            optionGroup = $('#options'),
+        var controlForm = $('#options'),
             currentEntry = $(this).parents('.entry:first'),
-            newEntry = $(currentEntry.clone()).appendTo(optionGroup);
+            newEntry = $(currentEntry.clone()).appendTo(controlForm);
 
         newEntry.find('input').val('');
         controlForm.find('.entry:not(:last) .btn-add')
             .removeClass('btn-add').addClass('btn-remove')
             .removeClass('btn-success').addClass('btn-danger')
             .html('<span class="glyphicon glyphicon-minus"></span>');
-    }).on('click', '.btn-remove', function(e)
+    })
+});
+
+
+Template.pollNew.events({
+    'click .btn-remove': function(e)
     {
 		$(this).parents('.entry:first').remove();
 
 		e.preventDefault();
 		return false;
-	});
-});
-
-
-Template.pollNew.events({
+	},
+    
     'submit form': function(e){
         e.preventDefault();
 
