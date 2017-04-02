@@ -7,7 +7,7 @@ $(function()
         var controlForm = $('#options'),
             // optionGroup = $('#options'),
             currentEntry = $(this).parents('.entry:first'),
-            newEntry = $(currentEntry.clone()).appendTo('controlForm');
+            newEntry = $(currentEntry.clone()).appendTo(controlForm);
 
 
         newEntry.find('input').val('');
