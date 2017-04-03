@@ -18,17 +18,11 @@
                 </div>
             {{/each}}
             <div class="entry input-group col-xs-12 col-md-3">
-                <input class="form-control options" name="fields[]" value="" type="text" placeholder="Option Text" />
-                <span class="input-group-btn">
-                    <button class="btn btn-success btn-add" type="button">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </button>
-                </span>
+                <input class="form-control newOption" name="newOption" value="" type="text" placeholder="New Option Text" />
             </div>
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Submit">
-            <a href="{{pathFor 'pollDashboard'}}" class="btn btn-secondary">Cancel</a>
+            <input type="submit" class="btn btn-primary" value="Done">
         </div>
     </form>
 </template>
