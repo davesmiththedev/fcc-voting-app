@@ -1,4 +1,16 @@
 /*Credit to Discover Meteor by Tom Coleman & Sacha Grief*/
+.social iframe{
+    vertical-align: middle;
+}
+.fb-share-button{
+ margin-right:20px;
+ margin-top: 5px;
+ padding-top: 1px;
+}
+.twitter-share-button{
+    padding-top: 0px;
+    margin-bottom: 3px;
+}
 .grid-block, .main, .poll, .comments li, .option, .newOption, .comment-form {
  background: #fff;
  border-radius: 3px;
