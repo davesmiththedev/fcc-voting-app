@@ -87,11 +87,5 @@ Template.pollEdit.events({
         });
         return false;
 	},
-    
-    'submit form': function(e){
-        e.preventDefault();
-
-        Router.go('pollDashboard', {_id: this._id})
-    }
 });
 
